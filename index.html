@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>E-Commerce Website Simulation</h1>
+        <nav>
+            <button id="viewCart">Cart (<span id="cartCount">0</span>)</button>
+            <button id="viewOrders">Orders</button>
+            <button id="viewVendor">Vendor Panel</button>
+        </nav>
+    </header>
+    
+    <main>
+        <input type="text" id="searchBar" placeholder="Search products..." />
+        <section id="productList"></section>
+        <section id="vendorPanel" class="hidden">
+            <h2>Vendor Product Management</h2>
+            <form id="productForm">
+                <input type="text" id="productTitle" placeholder="Product Title" required>
+                <input type="text" id="productDescription" placeholder="Description" required>
+                <input type="number" id="productPrice" placeholder="Price" required>
+                <input type="text" id="productCategory" placeholder="Category" required>
+                <input type="file" id="productImage" required>
+                <button type="submit">Add Product</button>
+            </form>
+            <div id="vendorProducts"></div>
+        </section>
+        <br><br>
+        <button id="viewCart">View Cart <span id="cartCount"></span></button>
+
+        <div id="cartPanel" class="hidden">
+            <h2>Your Cart</h2>
+            <div id="cartList"></div>
+            <button onclick="checkout()">Checkout</button>
+            <button onclick="closeCart()">Close</button>
+        </div>
+        <div id="checkoutPanel" class="hidden">
+            <h2>Checkout</h2>
+            <div id="billDetails"></div>
+            <p><strong>Total: $<span id="totalAmount">0.00</span></strong></p>
+            <button onclick="confirmOrder()">Confirm Order</button>
+            <button onclick="closeCheckout()">Cancel</button>
+        </div>
+        
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 E-Commerce Simulation</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
